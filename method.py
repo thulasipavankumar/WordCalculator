@@ -1,0 +1,2 @@
+def getPossiblePermutations(str):
+    return [];
