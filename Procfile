@@ -1,1 +1,1 @@
-web: java -Dserver.port=$PORT -jar  targer/WordCaluclator-1.0-SNAPSHOT.jar
+web: java -Dserver.port=$PORT -jar  target/WordCaluclator-1.0-SNAPSHOT.jar
