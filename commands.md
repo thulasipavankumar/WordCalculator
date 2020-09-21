@@ -18,6 +18,12 @@ git push heroku master
 ```
 git push heroku testbranch:master
 ```
+- If heroku fails with error " remote rejected master -> master (pre-receive hook declined)
+error: failed to push some refs to 'https://git.heroku.com/wordjumble.git'". restart heroku
+```
+heroku restart
+```
+
 ### pre-requisite 
 - heroku should be installed on machine
 
