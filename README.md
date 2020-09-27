@@ -1,6 +1,8 @@
 ### latest build [![CircleCI](https://circleci.com/gh/thulasipavankumar/WordCalculator.svg?style=svg)](https://circleci.com/gh/circleci/circleci-docs) |   master branch ![CircleCI](https://circleci.com/gh/circleci/circleci-docs/tree/teesloane-patch-5.svg?style=svg)
 
 ### [![GitHub](https://img.shields.io/badge/issue_tracking-github-blue?logo=github)](https://github.com/jupyterhub/jupyterhub/issues)[issues](https://github.com/thulasipavankumar/WordCalculator/issues)
+
+### [download release binary jar](https://github.com/thulasipavankumar/WordCalculator/releases)
 # Word Calculator 
 The main objective of this project is to take a word as an input and give count of  permutation of dictionary defined 
 words that can be formed by using  alphabets in the given word
