@@ -41,3 +41,4 @@ transaction-logs
 secrets.yml
 .gradletasknamecache
 .sts4-cache
+src/main/java/org/example/SpringBoot/WordCalculator/Experiment.java
