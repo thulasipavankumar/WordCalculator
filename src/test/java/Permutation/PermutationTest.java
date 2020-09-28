@@ -1,6 +1,7 @@
 package Permutation;
 
 
+import org.example.SpringBoot.Exception.CannotComputeException;
 import org.example.SpringBoot.WordCalculator.Dictionary;
 import org.example.SpringBoot.WordCalculator.Permutation;
 import org.junit.Assert;
@@ -24,11 +25,10 @@ public class PermutationTest {
     }
 
     @Test
-    public void test_for_a_word_is_not() {
+    public void test_for_a_word_is_not() throws CannotComputeException {
 
          permutation = new Permutation("not");
         HashSet<String> words =  get_available_words_for_a_given_word("not");
-
         Assert.assertEquals(words_for_string_is_not,words);
         Assert.assertFalse(words.isEmpty());
 
@@ -37,15 +37,15 @@ public class PermutationTest {
 
 
     @Test
-    public void testForEmpty() {
+    public void testForEmpty() throws CannotComputeException {
         HashSet<String> shouldBeEmptyList =  get_available_words_for_a_given_word("");
         Assert.assertEquals(1,shouldBeEmptyList.size());
     }
-    private HashSet<String> get_available_words_for_a_given_word(String word){
+    private HashSet<String> get_available_words_for_a_given_word(String word) throws CannotComputeException {
 
         return new Permutation(word).getWorldList();
     }
-    private HashSet<String> get_available_words_for_a_given_word(Permutation obj){
+    private HashSet<String> get_available_words_for_a_given_word(Permutation obj) throws CannotComputeException{
         return  obj.getWorldList();
     }
 
