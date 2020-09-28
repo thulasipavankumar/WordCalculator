@@ -1,4 +1,4 @@
-### latest build [![CircleCI](https://circleci.com/gh/thulasipavankumar/WordCalculator.svg?style=svg)](https://circleci.com/gh/circleci/circleci-docs) |   master branch ![CircleCI](https://circleci.com/gh/circleci/circleci-docs/tree/teesloane-patch-5.svg?style=svg)
+### latest build [![CircleCI](https://circleci.com/gh/thulasipavankumar/WordCalculator.svg?style=svg)](https://circleci.com/gh/thulasipavankumar/WordCalculator) |   master branch [![CircleCI](https://circleci.com/gh/thulasipavankumar/WordCalculator/tree/master.svg?style=svg)](https://circleci.com/gh/thulasipavankumar/WordCalculator/tree/master)
 [![GitHub](https://img.shields.io/badge/issue_tracking-github-blue?logo=github)](https://github.com/thulasipavankumar/WordCalculator/issues)
 
 ### [download release binary jar](https://github.com/thulasipavankumar/WordCalculator/releases)
