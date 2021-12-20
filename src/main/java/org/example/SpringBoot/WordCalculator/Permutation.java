@@ -12,6 +12,7 @@ import java.util.Stack;
 public class Permutation {
     //private final HashSet<String> worldList = new HashSet<String>();
     private  String wordToPermutate;
+    private final int MAX_PERMITTED_LENGTH=20;
     public Permutation(){
 
     }
@@ -27,7 +28,7 @@ public class Permutation {
     }
     public String getWordToPermutate(){return this.wordToPermutate;}
     public HashSet<String> getWorldList() throws CannotComputeException{
-    	if(this.wordToPermutate.length()>9) {
+    	if(this.wordToPermutate.length()>MAX_PERMITTED_LENGTH) {
     		throw new CannotComputeException("Current computation cannot generate the values for greater than 9");
     	}
         Tree root = new Tree(null, StringHelper.breakDownStringIntoCharList( this.wordToPermutate),null);
@@ -46,10 +47,7 @@ public class Permutation {
             return hashSet;
         }
         ListIterator<Tree> list = node.getChildNodes().listIterator();
-
-        while(list.hasNext()) {
-            storeValuesIntoHashSet(list.next(),hashSet);
-        }
+        node.getChildNodes().stream().parallel().forEach(element->storeValuesIntoHashSet(element,hashSet));
         return hashSet;
     }
     private void printFromBottom(Tree node,HashSet<String> result){
@@ -63,22 +61,20 @@ public class Permutation {
     }
     private void constructTree(Tree currentNode){
         ListIterator<String> list_of_available_elements = currentNode.getAvailableElements().listIterator();
-        while(list_of_available_elements.hasNext()){
-            String currentElement = list_of_available_elements.next();
-            if(!currentNode.hasNodeWithValue(currentElement)){  
-            	/* check if the current node is already created 
-            	 * -> if not then create and insert the child into list and continue recursion
-            	 */
-                Tree node = new Tree(currentNode,removeAElementFromList(currentNode.getAvailableElements(),currentElement),currentElement);
-                currentNode.insertAchildNode(node);
-                constructTree(node);
-            }
-        }
+        currentNode.getAvailableElements().stream().parallel().forEach(currentElement->{
+        	 if(!currentNode.hasNodeWithValue(currentElement)){  
+             	/* check if the current node is already created 
+             	 * -> if not then create and insert the child into list and continue recursion
+             	 */
+                 Tree node = new Tree(currentNode,removeAElementFromList(currentNode.getAvailableElements(),currentElement),currentElement);
+                 currentNode.insertAchildNode(node);
+                 constructTree(node);
+             }
+        });
     }
     private Tree constructTreeIteratively(Tree currentNode) {
 		 Stack<Tree> stack = new Stack<Tree>();
 		 ListIterator<String> list_of_available_elements = currentNode.getAvailableElements().listIterator();
-		 
 		 while(list_of_available_elements.hasNext()){
 	            String currentElement = list_of_available_elements.next();
 	            Tree node = new Tree(currentNode,removeAElementFromList(currentNode.getAvailableElements(),currentElement),currentElement);
