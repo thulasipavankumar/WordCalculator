@@ -4,6 +4,8 @@ import org.example.SpringBoot.WordCalculator.Sample;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 
 import java.util.Map;
 @RestController
@@ -23,7 +25,8 @@ public class Humor {
         return arr[(int )(Math.random() * 2 + 0)];
     }
     @GetMapping("/")
-    public Sample root(Sample sample) {
+    public Sample root(ViewControllerRegistry registry) {
+        //registry.addViewController("/").setViewName("redirect:/index.html");
         return  sample;
     }
     private static String getComputerName()
@@ -36,6 +39,7 @@ public class Humor {
         else
             return "Unknown Computer";
     }
+
 
 
 }
