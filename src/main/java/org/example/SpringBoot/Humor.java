@@ -25,7 +25,7 @@ public class Humor {
         return arr[(int )(Math.random() * 2 + 0)];
     }
     @GetMapping("/")
-    public Sample root(ViewControllerRegistry registry) {
+    public Sample root(Sample sample) {
         //registry.addViewController("/").setViewName("redirect:/index.html");
         return  sample;
     }
