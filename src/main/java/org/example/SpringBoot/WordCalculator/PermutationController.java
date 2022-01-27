@@ -19,4 +19,27 @@ public class PermutationController {
     		return new HashSet<String>();
     	}
     }
+    @PostMapping("/greet")
+    public HashSet<String> greet(@ModelAttribute Greeting values) {
+        //return "Hello " + values.getValue() + "!";
+        try {
+        Permutation permute = new Permutation(values.getValue());
+        return permute.getWorldList();
+        }catch( CannotComputeException ex) {
+            System.out.println("Current implemantation is not able to produce permutation for string length greater than 9");
+            return new HashSet<String>();
+        }
+    }
+    static class Greeting {
+        private String value;
+
+        public String getValue() {
+            return value;
+        }
+
+        public void setValue(String value) {
+            this.value = value;
+        }
+    }
+
 }
