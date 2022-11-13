@@ -1,4 +1,4 @@
-package src.main.java.org.example.SpringBoot.experiment;
+package org.example.SpringBoot.experiment;
 
 public class permute {
     public static void main(String[] args)
