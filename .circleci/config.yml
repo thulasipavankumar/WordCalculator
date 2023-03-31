@@ -4,6 +4,7 @@ jobs:
   test:
     docker:
       - image: node:latest
+    working_directory: /tmp
     steps:
       - checkout
       - run:
@@ -12,14 +13,12 @@ jobs:
                   apt install default-jre -y
                   apt install maven -y
                   npm install -g allure-commandline
-            when: always
-      - run:
-            command: |
                   mvn test
                   allure generate --clean
             when: always
       - store_artifacts:
-           path: /home/circleci/project/allure-report
+           path: /tmp/allure-report
+           
 
 
 workflows:
