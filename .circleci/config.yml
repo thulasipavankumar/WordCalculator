@@ -8,7 +8,8 @@ jobs:
       - checkout
       - run:
             command: |
-                  apt  install default-jre -y
+                  apt update -y
+                  apt install default-jre -y
                   apt install maven -y
                   npm install -g allure-commandline
             when: always
