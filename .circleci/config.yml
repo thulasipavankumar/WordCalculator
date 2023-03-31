@@ -18,6 +18,7 @@ jobs:
                   allure generate --clean
             when: always
 
+
 workflows:
   test_my_app:
     jobs:
