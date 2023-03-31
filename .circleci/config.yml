@@ -18,6 +18,8 @@ jobs:
                   mvn test
                   allure generate --clean
             when: always
+      - store_artifacts:
+           path: /home/circleci/project/allure-report
 
 
 workflows:
