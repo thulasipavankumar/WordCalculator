@@ -4,7 +4,6 @@ jobs:
   test:
     docker:
       - image: node:latest
-    working_directory: /tmp
     steps:
       - checkout
       - run:
@@ -17,7 +16,7 @@ jobs:
                   allure generate --clean
             when: always
       - store_artifacts:
-           path: /tmp/allure-report
+           path: ./allure-report
            
 
 
