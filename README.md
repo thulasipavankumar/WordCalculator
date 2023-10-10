@@ -19,7 +19,7 @@ words that can be formed by using  alphabets in the given word
 ## To get the permutation of a given word
 ```
 curl -X POST \
-  https://wordjumble.herokuapp.com/permute \
+  https://word-calculator-3tuc.onrender.com/permute \
   -H 'Cache-Control: no-cache' \
   -H 'Content-Type: application/json' \
   -d '{
@@ -30,7 +30,7 @@ curl -X POST \
 ## To check if it is a dictionary word
 ```
 curl -X POST \
-  https://wordjumble.herokuapp.com/isDictionaryWord \
+  https://word-calculator-3tuc.onrender.com/isDictionaryWord \
   -H 'Cache-Control: no-cache' \
   -H 'Content-Type: application/json' \
   -d '{
