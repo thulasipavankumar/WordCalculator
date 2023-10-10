@@ -8,15 +8,17 @@ jobs:
       - checkout
       - run:
             command: |
-                  apt-get -y install default-jre
+                  apt update -y
+                  apt install default-jre -y
                   apt install maven -y
                   npm install -g allure-commandline
-            when: always
-      - run:
-            command: |
                   mvn test
                   allure generate --clean
             when: always
+      - store_artifacts:
+           path: ./allure-report
+           
+
 
 workflows:
   test_my_app:
